@@ -1,0 +1,52 @@
+.select-gender {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.form-control {
+    padding: 17px 11px;
+    outline: none;
+    background: #1618230f;
+    border: #1618230f;
+    margin-bottom: 7px;
+    border-radius: 3px;
+    width: 100%;
+
+    &:hover {
+        background-color: #dedede;
+        // border: 1px solid #dedede;
+    }
+}
+
+.small-form {
+    .btn-register {
+        margin-top: 15px;
+        padding: 12px;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+
+
+        &.active {
+            background-color: #fe2c55;
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 12px;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+
+        &.active {
+            background-color: #fe2c55;
+            color: white;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Onest', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    height: 10vh;
+    line-height: 10vh;
+    box-shadow: rgba(50, 50, 93, 0.23) 0 30px 30px -20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.title {
+    font-size: 30px;
+    flex: 1;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* flex: 1; */
+}
+
+.nav-links li {
+    color: black;
+    font-size: 20px;
+    padding: 0 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+.delivery-button {
+    background-color: #2474a9;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.mobile-menu-icon {
+    display: none;
+}
+
+.icon-shipping {
+    font-size: 30px;
+    margin-right: 10px;
+    color: rgb(16, 187, 187);
+}
+
+@media (max-width: 932px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links-mobile {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        box-shadow: rgba(50, 50, 93, 0.23) 0 30px 30px -20px;
+        top: 10%;
+        transition: all 0.5s ease-in-out;
+        width: 100%;
+        background-color: white;
+    }
+
+    .nav-links-mobile li {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobile-menu-icon {
+        position: absolute;
+        display: block;
+        right: 20px;
+    }
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.hero h1 {
+    text-align: center;
+    font-size: 80px;
+}
+
+.nav-dropdown {
+    position: relative;
+    list-style: none;
+}
+
+.dropdown {
+    color: black;
+    font-size: 20px;
+    padding: 0 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+    text-decoration: none;
+    position: relative;
+
+    &:hover .dropdown-content {
+        display: block;
+        width: 300px;
+        /* Điều chỉnh chiều rộng của dropdown tùy theo nhu cầu */
+    }
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    list-style: none;
+    box-shadow: rgba(50, 50, 93, 0.23) 0 30px 30px -20px;
+    width: 300px;
+}
+
+.dropdown-content li {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content li:hover {
+    background-color: #e0e0e0;
+    color: #333;
+    font-size: 18px;
+}
+
+.service-item {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+}

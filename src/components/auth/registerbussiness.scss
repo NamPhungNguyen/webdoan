@@ -1,0 +1,27 @@
+.form-registerbussiness {
+    input {
+        padding: 17px 11px;
+        outline: none;
+        background: #1618230f;
+        border: #1618230f;
+        margin-bottom: 7px;
+        border-radius: 3px;
+        width: 100%;
+
+        &:hover {
+            background-color: #dedede;
+            //border: 1px solid #dedede;
+        }
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 12px;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+
+
+}

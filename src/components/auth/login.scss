@@ -1,0 +1,126 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 70px;
+}
+
+.col-4 {
+    flex: 0 0 auto;
+    width: 30.333333%;
+}
+
+.title-login {
+    text-align: center;
+    font-size: 23px;
+    font-weight: 600;
+    padding-top: 30px;
+    margin-bottom: 22px;
+
+}
+
+.txtE_U {
+    font-weight: 600;
+    padding-bottom: 3px;
+}
+
+.input {
+    padding: 17px 11px;
+    outline: none;
+    background: #1618230f;
+    border: #1618230f;
+    margin-bottom: 7px;
+    border-radius: 3px;
+    width: 100%;
+
+    &:hover {
+        background-color: #dedede;
+        // border: 1px solid #dedede;
+    }
+}
+
+.input-2 {
+    position: relative;
+
+    svg {
+        position: absolute;
+        top: 19px;
+        right: 23px;
+        cursor: pointer;
+    }
+}
+
+
+a.forgot-password {
+    color: rgb(233, 49, 49);
+    font-size: 14px;
+    margin-left: 5px;
+
+    &:hover {
+        color: #ef7f7f;
+    }
+}
+
+
+#btn-login {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+
+    &.active {
+        background-color: #fe2c55;
+        color: white;
+        cursor: pointer;
+    }
+
+}
+
+#btn-login[disabled=disabled],
+#btn-login:disabled {
+    cursor: not-allowed;
+}
+
+.back {
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.link-signup {
+    color: red;
+    font-size: 15px;
+}
+
+.btn-back {
+    color: black;
+}
+
+.question-signup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border: 1px solid black;
+    height: 70px;
+
+    p {
+        height: 70px;
+        text-align: center;
+        justify-content: center;
+        margin-top: 28px;
+    }
+
+    a:hover {
+        border-radius: 3px;
+        background-color: #ccc;
+        color: #fb6363;
+    }
+
+
+}
