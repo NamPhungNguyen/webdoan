@@ -48,7 +48,7 @@ const RegisterUser = () => {
                 phoneNumber,
                 password,
                 confirmPassword,
-                gender // Gender is already a boolean
+                gender
             })
                 .then(response => {
                     toast.success("Đăng ký người dùng thành công!");

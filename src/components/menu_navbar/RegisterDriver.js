@@ -51,6 +51,7 @@ const RegisterDriver = () => {
                 address,
                 email,
                 phoneNumber,
+                birthday,
                 idcard,
                 password,
                 confirm,
@@ -117,7 +118,7 @@ const RegisterDriver = () => {
                 <div>
                     <label htmlFor="birthday">Ngày sinh</label>
                     <input
-                        type="text"
+                        type="date"
                         id="birthday"
                         name="birthday"
                         value={birthday}
