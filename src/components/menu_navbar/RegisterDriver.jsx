@@ -52,7 +52,6 @@ const RegisterDriver = () => {
                 email,
                 phoneNumber,
                 birthday,
-                idcard,
                 password,
                 confirm,
                 gender
