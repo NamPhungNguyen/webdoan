@@ -46,6 +46,7 @@ const RegisterUser = () => {
                 email,
                 address,
                 phoneNumber,
+                birthday,
                 password,
                 confirmPassword,
                 gender
@@ -134,7 +135,7 @@ const RegisterUser = () => {
                         <input
                             id="birthday"
                             className="form-control"
-                            type="text"
+                            type="date"
                             name="birthday"
                             value={formData.birthday}
                             onChange={handleChange}

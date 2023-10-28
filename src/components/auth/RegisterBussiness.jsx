@@ -43,11 +43,16 @@ const RegisterBusiness = () => {
             axios.post("https://localhost:7156/api/SignIn/bussiness", {
                 businessName,
                 contactEmail,
-                bussinessPassword
+                bussinessPassword,
+                address,
+                contactEmail,
+                phoneNumber,
+                businessLicenseNumber,
+                businessWebsite
 
             })
                 .then(response => {
-                    toast.success("Đăng ký tài xế thành công!");
+                    toast.success("Đăng ký doanh nghiệp thành công!");
                 })
                 .catch(error => {
                     if (error.response && error.response.data) {

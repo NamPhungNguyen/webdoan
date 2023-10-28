@@ -1,9 +1,21 @@
 import React from "react"
-import { AiOutlineSearch } from "react-icons/ai"
+import { Link } from 'react-router-dom';
+import ListOrderCard from "../order_item/ListOrderCard";
+import OrderCard from "../order_item/OrderCard";
 import './home.scss'
 const Home = () => {
     return (
-        <h1>hjdksafhkhdkfjs</h1>
+        <>
+            {/* <Link to='/admin'>
+                <li>Admin</li>
+            </Link> */}
+            <div id="container" style={{ background: '#efefef', padding: '0 120px' }}>
+                <div style={{ marginTop: '20px', display: 'flex', alignItems: 'center', gap: '20px' }}>
+                    <OrderCard />
+                </div>
+            </div>
+        </>
+
     )
 }
 
