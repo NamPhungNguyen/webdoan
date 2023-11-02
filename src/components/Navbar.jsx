@@ -14,10 +14,6 @@ const Navbar = () => {
     //Sử dụng state để kiểm soát hiển thị của Navbar
     const [showNavbar, setShowNavbar] = useState(true);
 
-
-
-
-
     useEffect(() => {
         if (isOnAdminPage) {
             setShowNavbar(false); //Ẩn Navbar nếu là trang admin

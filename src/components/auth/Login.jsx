@@ -1,34 +1,51 @@
 import React, { useState } from 'react';
 import './login.scss';
 import { IoIosArrowBack } from 'react-icons/io';
-import { FaEyeSlash } from 'react-icons/fa'
-import { FaEye } from 'react-icons/fa'
-
+import { FaEyeSlash } from 'react-icons/fa';
+import { FaEye } from 'react-icons/fa';
+import { toast } from 'react-toastify';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 
 const Login = () => {
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isShowPassword, setIsShowPassword] = useState(false);
+    const [roleId, setRoleId] = useState(0); // Khởi tạo roleId là 1
+    const history = useHistory();
+
+    const loginApi = (email, password) => {
+        return axios.post("https://localhost:7156/api/Login", { email, password });
+    }
 
     const handleLogin = async () => {
-        try {
-            const response = await fetch('https://localhost:7156/api/Login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password }),
-            });
+        if (!email || !password) {
+            toast.error("Email/Password là bắt buộc");
+            return;
+        }
 
-            if (response.ok) {
-                // Xử lý dữ liệu trả về từ API ở đây
-            } else {
-                // Xử lý lỗi
+        // Thực hiện đăng nhập và lấy roleId từ API
+        try {
+            const res = await loginApi(email, password);
+            if (res.data && res.data.roleId) {
+                const roleId = res.data.roleId;
+
+                // Điều hướng dựa trên roleId
+                if (roleId === 1) {
+                    history.push('/admin');
+                } else if (roleId === 4) {
+                    history.push('/');
+                } else if (roleId === 3) {
+                    history.push('/');
+                } else {
+                    // Xử lý trường hợp khác
+                }
+
+                localStorage.setItem("token", res.data.token);
             }
         } catch (error) {
-            console.error('Lỗi khi gọi API:', error);
+            console.error("Đăng nhập thất bại: ", error);
         }
     };
 
@@ -48,7 +65,6 @@ const Login = () => {
                     <div className='eye-container' onClick={() => setIsShowPassword(!isShowPassword)} >
                         {isShowPassword ? <FaEye /> : <FaEyeSlash />}
                     </div>
-
                 </div>
                 <a href='#' className='forgot-password'>Quên mật khẩu?</a>
                 <button id='btn-login'
@@ -59,7 +75,6 @@ const Login = () => {
                 <div className='back'>
                     <IoIosArrowBack className="icon-back" /> <a className='btn-back' href='/'>Quay lại</a>
                 </div>
-
                 <div className='question-signup'>
                     <p>Bạn chưa có tài khoản?<a href='/register' className='link-signup'> Đăng ký ngay</a> </p>
                 </div>
