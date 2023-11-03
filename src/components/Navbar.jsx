@@ -5,7 +5,7 @@ import './navbar.scss';
 import { FaBars } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
 import { FaShippingFast } from 'react-icons/fa';
-import { BiChevronDown } from 'react-icons/bi'
+import { BiChevronDown } from 'react-icons/bi';
 
 const Navbar = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -13,6 +13,7 @@ const Navbar = () => {
     const isOnAdminPage = location.pathname === '/admin';
     //Sử dụng state để kiểm soát hiển thị của Navbar
     const [showNavbar, setShowNavbar] = useState(true);
+    
 
     useEffect(() => {
         if (isOnAdminPage) {
@@ -64,8 +65,12 @@ const Navbar = () => {
                     <Link to='/contact'>
                         <li>Liên hệ</li>
                     </Link>
+
+
+
+                    
                     <Link to='/login'>
-                        <button className="delivery-button">Giao hàng ngay</button>
+                        <button className="delivery-button">Đăng nhập</button>
                     </Link>
                 </div>
             </nav>

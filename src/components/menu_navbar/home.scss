@@ -4,31 +4,106 @@
     box-sizing: border-box;
 }
 
-.box_search {
-    background: #fff;
-    border-radius: 0 0 16px 16px;
-    padding: 8ppx 16px;
-    margin-top: 6px;
-    font-size: 14px;
-    height: 40px;
-    width: 700px;
-    margin: 0 auto;
-}
-
-.search_form_order {
+.home-header-banner {
+    background-image: url(/src/assets/images/anh_home.jpg), linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.1));
+    height: 577px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
-    justify-content: space-between;
-}
+    flex-direction: column;
 
-.item_search_form {
-    width: calc(100% - 176px);
-    margin: 0;
-    align-items: center;
-    min-height: 40px;
-    position: relative;
+    .content-up {
+        background-image: linear-gradient(rgba(126, 126, 126, 0.25), rgba(255, 255, 255, 0.1));
+        padding-top: 15px;
+        height: 65%;
 
-}
+        .title1 {
+            text-align: center;
+            font-size: 30px;
+            text-shadow: 1px 1px 1px #333;
+            margin-bottom: 15px;
+            color: darksalmon;
+        }
 
-.text_input_search {
-    max-width: 100%;
+        .title2 {
+            text-align: center;
+            font-size: 30px;
+            text-shadow: 1px 1px 1px #333;
+            color: darksalmon;
+        }
+
+        .search {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            padding: 10px;
+            width: fit-content;
+            border-radius: 25px;
+            background: #cde8eb;
+            margin-top: 30px;
+
+
+            .icon-search-home {
+                margin: 0 5px;
+            }
+
+            input {
+                height: 30px;
+                width: 430px;
+                background: transparent;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+
+    .content-down {
+        height: 35%;
+
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1));
+        .options {
+            text-align: center;
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            .option-child {
+                width: 100px;
+
+                .icon-child {
+                    background: white;
+                    width: 40px;
+                    height: 40px;
+                    padding: 10px;
+                    border-radius: 50%;
+                    text-align: center;
+                    margin: 0 auto;
+                }
+
+                svg {
+                    color: #e89610;
+                    font-size: 20px;
+                }
+            }
+
+            .text-child {
+                font-size: 15px;
+                font-weight: 500;
+                
+                color:rgb(39, 53, 129) ;
+                &:hover {
+                    color: #e89610;
+                    cursor: pointer;
+                }
+            }
+        }
+
+    }
+
+
 }

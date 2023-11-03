@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './login.scss';
 import { IoIosArrowBack } from 'react-icons/io';
 import { FaEyeSlash } from 'react-icons/fa';
@@ -15,6 +15,9 @@ const Login = () => {
     const [roleId, setRoleId] = useState(0); // Khởi tạo roleId là 1
     const history = useHistory();
 
+    
+    
+
     const loginApi = (email, password) => {
         return axios.post("https://localhost:7156/api/Login", { email, password });
     }
@@ -28,6 +31,7 @@ const Login = () => {
         // Thực hiện đăng nhập và lấy roleId từ API
         try {
             const res = await loginApi(email, password);
+
             if (res.data && res.data.roleId) {
                 const roleId = res.data.roleId;
 
@@ -42,7 +46,13 @@ const Login = () => {
                     // Xử lý trường hợp khác
                 }
 
+                toast.success("Đăng nhập thành công");
+
                 localStorage.setItem("token", res.data.token);
+            } else {
+                if (res && res.status === 200){
+                    toast.error("Tài khoản hoặc mật khẩu không chính xác")
+                } 
             }
         } catch (error) {
             console.error("Đăng nhập thất bại: ", error);
