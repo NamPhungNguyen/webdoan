@@ -23,6 +23,7 @@ const OrderCard = () => {
                     <p>Total Amount: {order.totalAmount}</p>
                     <p>Position Come Id: {order.positionComeId}</p>
                     <p>Position Go Id: {order.positionGoId}</p>
+
                     <p>Trạng thái: {order.status ? 'Hoàn thành' : 'Chưa hoàn thành'}</p>
                 </div>
             ))}
